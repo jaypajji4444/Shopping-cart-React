@@ -7,9 +7,10 @@ import {
     Nav,
     NavItem,
     Container,
-    NavLink
+  
 } from 'reactstrap';
 
+import { Link } from 'react-router-dom'
 
 class Navi extends Component {
     state = {
@@ -26,23 +27,23 @@ class Navi extends Component {
     };
 
     render() {
-     
 
-       
+
+
         return (
             <div>
-                <Navbar color='primary' dark expand='sm' className='mb-5'>
+                <Navbar style={{ backgroundColor: "#f2f2f2" }} light expand='sm' className='mb-5'>
                     <Container>
-                        <NavbarBrand href='/'>ShoppingList</NavbarBrand>
+                        <NavbarBrand href='/'><strong>TeamBantai</strong></NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className='ml-auto' navbar>
-                        <NavItem>
-                            <NavLink href="/" className="text-white" >Home</NavLink>
-                        </NavItem>
-                        <NavItem>
-                        <NavLink href="/cart" className=" text-white">Cart</NavLink>
-                        </NavItem>
+                                <NavItem>
+                                    <Link to="/" className="text-dark  p-3" >Home</Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link to="/cart" className=" text-dark p-3">Cart</Link>
+                                </NavItem>
                             </Nav>
                         </Collapse>
                     </Container>
