@@ -17,6 +17,7 @@ const initState = {
         { id: 5, title: 'Cropped-sho', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 160, img: Item5 },
         { id: 6, title: 'Blues', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 90, img: Item6 }
     ],
+
     addedItems: [],
     total: 0
 
@@ -39,7 +40,6 @@ const addItem = (state, action) => {
             ...state,
             total: newTotal,
             addedItems: [...state.addedItems, addedItem]
-
         }
     }
 }
@@ -60,12 +60,21 @@ const deleteItem=(state,action)=>{
    
 }
 
+const setItems=(state,action)=>{
+    return{
+        ...state,
+        items:action.items
+    }
+}
+
 const itemReducer = (state = initState, action) => {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
             return addItem(state, action)
         case actionTypes.DELETE_FROM_CART:
-            return deleteItem(state,action)    
+            return deleteItem(state,action)
+        case actionTypes.SET_INGREDIENTS:
+            return setItems(state,action)        
         default:
         return state
 

@@ -1,1 +1,1 @@
-export {addItem,addQty,deleteItem,subQty} from './itemActions'
+export {addItem,addQty,deleteItem,subQty,initItem,setItem} from './itemActions'

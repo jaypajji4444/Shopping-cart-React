@@ -18,7 +18,7 @@ class Cart extends Component {
                     <tr key={item.id}>
                     <th scope="row" className="border-0">
                     <div className="p-2">
-                    <img src={item.img} alt="" width="70" className="img-fluid rounded shadow-sm" />
+                    <img src={process.env.PUBLIC_URL+"images/"+item.img} alt="" width="70" className="img-fluid rounded shadow-sm" />
                     <div className="ml-3 d-inline-block align-middle">
                     <h5 className="mb-0 text-dark d-inline-block align-middle">{item.title}</h5><span className="text-muted font-weight-normal font-italic d-block">Desc: {item.desc}</span>
                     </div>
